@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+
+    <style>
+        .accordion-item.active .accordion-content {
+            display: block;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="w-[450px] border-2 border-black mb-2 accordion-item">
+        <div>
+            <div class="bg-slate-600 text-white p-2 hover:bg-slate-800 accordion-title">Accordion Title 1</div>
+            <div class="bg-yellow-300 p-2 hidden accordion-content">Accordion content
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ex repellendus magni aperiam rerum sit.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w-[450px] border-2 border-black mb-2 accordion-item">
+        <div>
+            <div class="bg-slate-600 text-white p-2 hover:bg-slate-800 accordion-title">Accordion Title 2</div>
+            <div class="bg-yellow-300 p-2 hidden accordion-content">Accordion content
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ex repellendus magni aperiam rerum sit.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w-[450px] border-2 border-black mb-2 accordion-item">
+        <div>
+            <div class="bg-slate-600 text-white p-2 hover:bg-slate-800 accordion-title">Accordion Title 3</div>
+            <div class="bg-yellow-300 p-2 hidden accordion-content">Accordion content
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ex repellendus magni aperiam rerum sit.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w-[450px] border-2 border-black mb-2 accordion-item">
+        <div>
+            <div class="bg-slate-600 text-white p-2 hover:bg-slate-800 accordion-title">Accordion Title 4</div>
+            <div class="bg-yellow-300 p-2 hidden accordion-content">Accordion content
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ex repellendus magni aperiam rerum sit.
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    const accordionItems = document.querySelectorAll(".accordion-item");
+
+    accordionItems.forEach(item => {
+        const title = item.querySelector(".accordion-title");
+        const content = item.querySelector(".accordion-item");
+
+        title.addEventListener('click', () => {
+
+            for (var i = 0; i < accordionItems.length; i++) {
+                if (accordionItems[i] != item) {
+                    accordionItems[i].classList.remove('active');
+                }
+                else {
+                    item.classList.toggle('active');
+
+
+                }
+            }
+        });
+
+
+    });
+</script>
+
+</html>
